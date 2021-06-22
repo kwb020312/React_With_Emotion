@@ -1,15 +1,13 @@
 import React from "react";
 import { css } from "@emotion/css";
 
-const color = "white";
-
-function App() {
+export default function App() {
   return (
     <h1
       className={css`
-        background-color: black;
+        background-color: hotpink;
         &:hover {
-          color: ${color};
+          color: ${"darkgreen"};
         }
       `}
     >
@@ -17,5 +15,3 @@ function App() {
     </h1>
   );
 }
-
-export default App;

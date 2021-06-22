@@ -99,3 +99,30 @@ const style = css`
 
 return <Component css={style} />;
 ```
+
+## jsx
+
+React에서 Emotion을 사용한다면 해당 기능을 사용하는것이 편리한데,
+
+```javascript
+// 바벨 파일을 작성한 후 아래 라인 주석까지 넣어주어야 함
+/** @jsx jsx */
+import { jsx } from "@emotion/react";
+
+return (
+  <div
+    css={{
+      backgroundColor: "hotpink",
+      "$:hover": {
+        color: "lightgreen",
+      },
+    }}
+  >
+    hotpink 배경이 생길거에요!
+  </div>
+);
+```
+
+위와같이 문자열로 묶어서 hover 또한 사용이 가능하다.
+
+※ 단 바벨파일 작성이 필수기 때문에 공식문서를 잘 읽어보길 바란다.
