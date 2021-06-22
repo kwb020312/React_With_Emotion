@@ -43,3 +43,59 @@ export default App;
 <img src="gitImages\Hover.jpg">
 
 마우스를 올렸을 때 Hello React!가 표시되는 것을 볼 수 있음
+
+## 적용방법
+
+적용방법에는 세 가지가 있는데
+
+블록단위로 끊거나, 인라인스타일을 적용하거나,
+스타일 변수를 선언한 후 적용시키는 것이다.
+
+1. 인라인 스타일
+
+```javascript
+yarn add @emotion/react
+```
+
+```javascript
+import { css } from "@emotion/react";
+<h1
+  className={css`
+    style: value;
+  `}
+>
+  hello
+</h1>;
+```
+
+2. 블록단위
+
+```jsx
+yarn add @emotion/styled
+```
+
+```javascript
+import styled from "@emtion/styled";
+
+const Button = styled.button`
+  style: value;
+`;
+
+return <Button>스타일이 적용됨</Button>;
+```
+
+3. 변수 선언
+
+```javascript
+yarn add @emotion/react
+```
+
+```javascript
+import { jsx, css } from "@emotion/react";
+
+const style = css`
+  style: value;
+`;
+
+return <Component css={style} />;
+```
