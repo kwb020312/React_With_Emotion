@@ -351,3 +351,24 @@ return (
 ```
 
 위 구문처럼 &를 this로써 사용한다.
+
+## Media Queries
+
+반응형 웹을 만드는것에 있어 미디어 쿼리 또한 필연적으로 사용하여야 하는데
+여러 방법이 있지만 원초적인 기능은 아래 방법으로 구현할 수 있다.
+
+```javascript
+import { jsx, css } from "@emotion/react";
+
+return (
+  <p
+    css={css`
+      @media (min-width: 420px) {
+        color: white;
+      }
+    `}
+  >
+    Some Text!!
+  </p>
+);
+```
