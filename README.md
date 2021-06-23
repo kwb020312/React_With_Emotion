@@ -324,3 +324,30 @@ css속성의 값으로 배열을 두고 import시킬 변수명을 후순위로 �
 ## 기본단위
 
 React와 마찬가지로 기본단위로는 px(픽셀) 이 선택되며 다른 단위를 사용하고 싶을 경우에만 지정하면 된다.
+
+## css선택자 &
+
+& 를 적용하면 더 편하게 Element를 Select 할 수 있는데,
+
+```javascript
+import { css } from "@emotion/react";
+
+const paragraph = css`
+  color: red;
+
+  header & {
+    color: green;
+  }
+`;
+
+return (
+  <>
+    <header>
+      <p css={paragraph}>green</p>
+    </header>
+    <p css={paragraph}>red</p>
+  </>
+);
+```
+
+위 구문처럼 &를 this로써 사용한다.
