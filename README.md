@@ -372,3 +372,30 @@ return (
   </p>
 );
 ```
+
+## 전역 스타일 지정
+
+Global Style을 지정하고 싶을 때는 어떻게 하면 좋을까??
+
+따로 Global이라는 함수를 갖고있기 때문에 편하게 모듈을 불러와 사용하면 된다.
+
+```javascript
+import { Global, css } from '@emotion/react'
+
+return (
+  <>
+    <!-- 해당 함수는 Self Closing Tag이다. -->
+    <Global
+      styles={css`
+        .test {
+          color: hotpink !important;
+        }
+      `}
+    />
+
+    <p className="test">Hot Pink Text</p>
+  </>
+)
+```
+
+이렇게 사용하면 된다.
