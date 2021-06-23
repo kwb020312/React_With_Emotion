@@ -277,3 +277,46 @@ return (
   </Span>
 );
 ```
+
+## Style태그 사용
+
+EmotionJS 를 이용하면 React 내부에서 Style태그의 사용이 가능해지는데,
+
+```javascript
+return (
+  <>
+    <style>
+      {`
+        .hello {
+          color: red;
+        }
+      `}
+    </style>
+    <p className="hello">빨강글씨</p>
+  </>
+);
+```
+
+위와 같은 모습으로 기존 Style Sheet 가 분리되지 않은 HTML형태의 코드 작성도 가능하다
+
+## !import
+
+CSS의 !import문법을 사용하기 위해서는
+
+```javascript
+import {css,jsx} from '@emotion/react'
+
+const import = css`
+  color: red;
+`
+
+const base = css`
+  color: green;
+`
+
+return (
+  <p css={[base,import]}>빨강 글씨</p>
+)
+```
+
+css속성의 값으로 배열을 두고 import시킬 변수명을 후순위로 배치하면 된다.
